@@ -1,4 +1,8 @@
 <?php
+function getState()
+{
+	//echo("ddd");
+}
 
 function getPinState($pin,$pins){
 	$commands = array();
@@ -13,7 +17,7 @@ function secure($string){
 }
 
 function StartSPA($eau,$air){
-	
+
 }
 
 /*
