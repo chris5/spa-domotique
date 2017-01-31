@@ -1,6 +1,7 @@
 <?php
 require('functions.php');
 getState();
+
 if(isset($_POST['eau_j'])){
     $spa['eau']=true;
     $state_eau=1;
@@ -79,6 +80,7 @@ else{
 ?>
 <html>
     <head>
+        <meta HTTP-EQUIV="Refresh" CONTENT="10">
         <title>Spa</title>
         <link rel="stylesheet" href="css/style2.css">
     </head>
@@ -163,12 +165,7 @@ else{
     <tr><th colspan="3">Températures</th></tr>
     <tr><td width="50%">Air</td><td colspan="2" width="50%">Eau</td></tr>
     <tr><td width="50%"></td><td width="25%">Jacuzzi</td><td width="25%">Piscine</td></tr>
-    <tr><td width="25%">°C</td width="25%"><td>°C</td><td colspan=2 width="50%">°C</td></tr>
-    </table>
-    
-    <table>
-    <tr><td><input type="button" class="button" value="Get State"></td>
-    </tr>
+    <tr><td width="25%">25 °C</td width="25%"><td>35 °C</td><td colspan=2 width="50%">24 °C</td></tr>
     </table>
     </form>
     <?php //var_dump($toto);
