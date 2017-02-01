@@ -1,8 +1,8 @@
 <?php
 require('functions.php');
-var_dump(getState());
+$state=getState();
 
-if(isset($_POST['eau_j'])){
+if($state['eau_j'] == 1){
     $spa['eau_j']=true;
 }
 else{
