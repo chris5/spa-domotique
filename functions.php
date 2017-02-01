@@ -1,11 +1,12 @@
 <?php
+
+
 function pdo()
 {
-	$user='root';
-	$pass='';
+	$ini = parse_ini_file("config.ini");
 	$db='spa_bdd';
 	$result = array();
-	$dbh = new PDO('mysql:host=localhost;dbname='.$db.'', $user, $pass);
+	$dbh = new PDO('mysql:host=localhost;dbname='.$db.'', $ini["user"], $ini["password"]);
 	return($dbh);
 }
 
