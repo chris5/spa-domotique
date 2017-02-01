@@ -16,6 +16,13 @@ function getState()
 	foreach($dbh->query('SELECT gpio,fonction from cablages WHERE cablage IS NOT NULL ORDER BY gpio') as $row) 
 		{
 			$var=exec("gpio read ".$row["gpio"]."");
+			if($var == 1){
+				$var=true;
+			}
+				else{
+					$var=false;
+				}
+			
 			$result[$row["fonction"]] = $var;}
     $dbh = null;
 
