@@ -35,20 +35,16 @@ function ChangeState($fonctions,$value)
 	$dbh=pdo();
 	foreach($dbh->query('SELECT gpio from cablages where fonction = "'.$fonctions.'"') as $row)
 	{
-		//$results = explode(',', $row["pin"]);
 		foreach($row as $result)
 			{
-				$i=+1;
 				if ($value == 1){
-					$tab = [$i,("gpio write ".$result." 1")];
+					exec("gpio write ".$result." 1");
 				}
 				else{
-					$tab = [$i,("gpio write ".$result." 0")];
+					exec("gpio write ".$result." 0");
 				}
 			}	
-	}
-	return($tab);
-	
+	}	
 }
 
 function air_j($value)
