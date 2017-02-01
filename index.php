@@ -1,82 +1,67 @@
 <?php
 require('functions.php');
-getState();
+var_dump(getState());
 
 if(isset($_POST['eau_j'])){
-    $spa['eau']=true;
-    $state_eau=1;
+    $spa['eau_j']=true;
 }
 else{
-    $spa['eau']=false;
-    $state_eau=0;
+    $spa['eau_j']=false;
 }
+
 if(isset($_POST['air_j'])){
-    $spa['air']=true;
-    $state_air = 1;
+    $spa['air_j']=true;
 }
 else{
-    $spa['air']=false;
-    $state_air = 0;
+    $spa['air_j']=false;
 }
+
 if(isset($_POST['fil_j'])){
-    $spa['fil']=true;
-    $state_fil = 1;
+    $spa['fil_j']=true;
 }
 else{
-    $spa['fil']=false;
-    $state_fil = 0;
+    $spa['fil_j']=false;
 }
+
 if(isset($_POST['cha_j'])){
-    $spa['cha']=true;
-    $state_cha = 1;
+    $spa['cha_j']=true;
 }
 else{
-    $spa['cha']=false;
-    $state_cha = 0;
+    $spa['cha_j']=false;
 }
+
 if(isset($_POST['lum_j'])){
-    $spa['lum']=true;
-    $state_lum = 1;
+    $spa['lum_j']=true;
 }
 else{
-    $spa['lum']=false;
-    $state_lum = 0;
+    $spa['lum_j']=false;
 }
 //PISCINE
 if(isset($_POST['ncc_p'])){
-    $pool['ncc']=true;
-    $state_ncc=1;
+    $spa['ncc_p']=true;
 }
 else{
-    $pool['ncc']=false;
-    $state_ncc=0;
+    $spa['ncc_p']=false;
 }
 if(isset($_POST['fil_p'])){
-    $pool['fil']=true;
-    $state_fil = 1;
+    $spa['fil_p']=true;
 }
 else{
-    $pool['fil']=false;
-    $state_fil = 0;
+    $spa['fil_p']=false;
 }
 if(isset($_POST['cha_p'])){
-    $pool['cha']=true;
-    $state_cha = 1;
+    $spa['cha_p']=true;
 }
 else{
-    $pool['cha']=false;
-    $state_cha = 0;
+    $spa['cha_p']=false;
 }
 if(isset($_POST['lum_p'])){
-    $pool['lum']=true;
-    $state_lum = 1;
+    $spa['lum_p']=true;
 }
 else{
-    $pool['lum']=false;
-    $state_lum = 0;
+    $spa['lum_p']=false;
 }
-//var_dump($spa);
-//var_dump($pool);
+var_dump($spa);
 ?>
 <html>
     <head>
@@ -92,38 +77,38 @@ else{
     <tr>
     <td><label class="switch">
     <?php
-    if(isset($_POST['eau_j'])){
-    print('<input name="eau_j" type="checkbox" value="eau" onchange="this.form.submit()" checked>');
-    $toto=eau_j($spa['eau']);}
+    if($spa['eau_j']==true){
+    print('<input name="eau_j" type="checkbox" value="eau_j" onchange="this.form.submit()" checked>');
+    $toto=ChangeState('eau_j',$spa['eau_j']);}
     else{
-    print('<input name="eau_j" type="checkbox" value="eau" onchange="this.form.submit()">');
-    $toto=eau_j($spa['eau']);}
+    print('<input name="eau_j" type="checkbox" value="eau_j" onchange="this.form.submit()">');
+    $toto=ChangeState('eau_j',$spa['eau_j']);}
     ?><div class="slider round"></div></label></td>
     <td><label class="switch">
     <?php
-    if(isset($_POST['air_j'])){
-    print('<input name="air_j" type="checkbox" value="air" onchange="this.form.submit()" checked>');}
+    if($spa['air_j']==true){
+    print('<input name="air_j" type="checkbox" value="air_j" onchange="this.form.submit()" checked>');}
     else{
-    print('<input name="air_j" type="checkbox" value="air" onchange="this.form.submit()">');}
+    print('<input name="air_j" type="checkbox" value="air_j" onchange="this.form.submit()">');}
     ?><div class="slider round"></div></label></td><td><label class="switch">
     <?php
-    if(isset($_POST['fil_j'])){
-    print('<input name="fil_j" type="checkbox" value="fil" onchange="this.form.submit()" checked>');}
+    if($spa['fil_j']==true){
+    print('<input name="fil_j" type="checkbox" value="fil_j" onchange="this.form.submit()" checked>');}
     else{
-    print('<input name="fil_j" type="checkbox" value="fil" onchange="this.form.submit()">');}
+    print('<input name="fil_j" type="checkbox" value="fil_j" onchange="this.form.submit()">');}
     ?><div class="slider round"></div></label></td><td><label class="switch">
     <?php
-    if(isset($_POST['cha_j'])){
-    print('<input name="cha_j" type="checkbox" value="cha" onchange="this.form.submit()" checked>');}
+    if($spa['cha_j']==true){
+    print('<input name="cha_j" type="checkbox" value="cha_j" onchange="this.form.submit()" checked>');}
     else{
-    print('<input name="cha_j" type="checkbox" value="cha" onchange="this.form.submit()">');}
+    print('<input name="cha_j" type="checkbox" value="cha_j" onchange="this.form.submit()">');}
     ?><div class="slider round"></div></label></td>
     <td><label class="switch">
     <?php
-    if(isset($_POST['lum_j'])){
-    print('<input name="lum_j" type="checkbox" value="lum" onchange="this.form.submit()" checked>');}
+    if($spa['lum_j']==true){
+    print('<input name="lum_j" type="checkbox" value="lum_j" onchange="this.form.submit()" checked>');}
     else{
-    print('<input name="lum_j" type="checkbox" value="lum" onchange="this.form.submit()">');}
+    print('<input name="lum_j" type="checkbox" value="lum_j" onchange="this.form.submit()">');}
     ?><div class="slider round"></div></label></td>
     </tr>
     </table>
@@ -133,29 +118,29 @@ else{
     <tr>
     <td><label class="switch">
     <?php
-    if(isset($_POST['ncc_p'])){
-    print('<input name="ncc_p" type="checkbox" value="ncc" onchange="this.form.submit()" checked>');}
+    if($spa['ncc_p']==true){
+    print('<input name="ncc_p" type="checkbox" value="ncc_p" onchange="this.form.submit()" checked>');}
     else{
-    print('<input name="ncc_p" type="checkbox" value="ncc" onchange="this.form.submit()">');}
+    print('<input name="ncc_p" type="checkbox" value="ncc_p" onchange="this.form.submit()">');}
     ?><div class="slider round"></div></label></td>
     <td><label class="switch">
     <?php
-    if(isset($_POST['fil_p'])){
-    print('<input name="fil_p" type="checkbox" value="fil" onchange="this.form.submit()" checked>');}
+    if($spa['fil_p']==true){
+    print('<input name="fil_p" type="checkbox" value="fil_p" onchange="this.form.submit()" checked>');}
     else{
-    print('<input name="fil_p" type="checkbox" value="fil" onchange="this.form.submit()">');}
+    print('<input name="fil_p" type="checkbox" value="fil_p" onchange="this.form.submit()">');}
     ?><div class="slider round"></div></label></td><td><label class="switch">
     <?php
-    if(isset($_POST['cha_p'])){
-    print('<input name="cha_p" type="checkbox" value="cha" onchange="this.form.submit()" checked>');}
+    if($spa['cha_p']==true){
+    print('<input name="cha_p" type="checkbox" value="cha_p" onchange="this.form.submit()" checked>');}
     else{
-    print('<input name="cha_p" type="checkbox" value="cha" onchange="this.form.submit()">');}
+    print('<input name="cha_p" type="checkbox" value="cha_p" onchange="this.form.submit()">');}
     ?><div class="slider round"></div></label></td><td><label class="switch">
     <?php
-    if(isset($_POST['lum_p'])){
-    print('<input name="lum_p" type="checkbox" value="lum" onchange="this.form.submit()" checked>');}
+    if($spa['lum_p']==true){
+    print('<input name="lum_p" type="checkbox" value="lum_p" onchange="this.form.submit()" checked>');}
     else{
-    print('<input name="lum_p" type="checkbox" value="lum" onchange="this.form.submit()">');}
+    print('<input name="lum_p" type="checkbox" value="lum_p" onchange="this.form.submit()">');}
     ?><div class="slider round"></div></label></td>
     </tr>
     </table>
@@ -168,7 +153,7 @@ else{
     <tr><td width="25%">25 °C</td width="25%"><td>35 °C</td><td colspan=2 width="50%">24 °C</td></tr>
     </table>
     </form>
-    <?php //var_dump($toto);
+    <?php var_dump($toto);
     ?>
 </body>
 </html>

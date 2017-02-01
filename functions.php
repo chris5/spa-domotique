@@ -1,28 +1,46 @@
 <?php
-function getState()
+function pdo()
 {
 	$user='root';
 	$pass='';
 	$db='spa_bdd';
 	$result = array();
-	try {
-		$dbh = new PDO('mysql:host=localhost;dbname='.$db.'', $user, $pass);
-		foreach($dbh->query('SELECT * from gpio_ports WHERE cablage IS NOT NULL') as $row) {
-			$var=exec("gpio read ".$row["gpio"]."");
-			$var="1";
-			//echo($var);
-			$result[$row["gpio"]] = $var;}
-    $dbh = null;
-} catch (PDOException $e) {
-    print "Erreur !: " . $e->getMessage() . "<br/>";
-    die();
+	$dbh = new PDO('mysql:host=localhost;dbname='.$db.'', $user, $pass);
+	return($dbh);
 }
+
+function getState()
+{
+	$dbh=pdo();
+	foreach($dbh->query('SELECT gpio,fonction from cablages WHERE cablage IS NOT NULL ORDER BY gpio') as $row) 
+		{
+			$var=exec("gpio read ".$row["gpio"]."");
+			$result[$row["fonction"]] = $var;}
+    $dbh = null;
+
 return($result);
 }
 
-function eau_j($value)
+function ChangeState($fonctions,$value)
 {
-
+	$tab=array();
+	$dbh=pdo();
+	foreach($dbh->query('SELECT gpio from cablages where fonction = "'.$fonctions.'"') as $row)
+	{
+		//$results = explode(',', $row["pin"]);
+		foreach($row as $result)
+			{
+				$i=+1;
+				if ($value == 1){
+					$tab = [$i,("gpio write ".$result." 1")];
+				}
+				else{
+					$tab = [$i,("gpio write ".$result." 0")];
+				}
+			}	
+	}
+	return($tab);
+	
 }
 
 function air_j($value)
@@ -64,6 +82,19 @@ function lum_p($value)
 {
 
 }
+function tmp_p($value)
+{
+
+}
+function tmp_j($value)
+{
+
+}
+function tmp_a($value)
+{
+
+}
+
 function getPinState($pin,$pins){
 	$commands = array();
 	exec("gpio read ".$pins[$pin],$commands,$return);
