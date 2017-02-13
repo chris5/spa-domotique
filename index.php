@@ -2,7 +2,7 @@
 require('functions.php');
 $state=getState();
 
-if($state['eau_j'] == 1){
+if(isset($_POST['eau_j'])){
     $spa['eau_j']=true;
 }
 else{
@@ -24,7 +24,7 @@ else{
 }
 
 if(isset($_POST['cha_j'])){
-    $spa['cha_j']=true;
+    $spa['cha_j']=true; 
 }
 else{
     $spa['cha_j']=false;
@@ -61,11 +61,11 @@ if(isset($_POST['lum_p'])){
 else{
     $spa['lum_p']=false;
 }
-var_dump($spa);
+#var_dump($spa);
 ?>
 <html>
     <head>
-        <meta HTTP-EQUIV="Refresh" CONTENT="10">
+        <!--<meta HTTP-EQUIV="Refresh" CONTENT="10">!-->
         <title>Spa</title>
         <link rel="stylesheet" href="css/style2.css">
     </head>
@@ -78,11 +78,10 @@ var_dump($spa);
     <td><label class="switch">
     <?php
     if($spa['eau_j']==true){
-    print('<input name="eau_j" type="checkbox" value="eau_j" onchange="this.form.submit()" checked>');
-    $toto=ChangeState('eau_j',$spa['eau_j']);}
+    print('<input name="eau_j" type="checkbox" value="eau_j" onchange="this.form.submit()" checked>');}
     else{
-    print('<input name="eau_j" type="checkbox" value="eau_j" onchange="this.form.submit()">');
-    $toto=ChangeState('eau_j',$spa['eau_j']);}
+    print('<input name="eau_j" type="checkbox" value="eau_j" onchange="this.form.submit()">');}
+    ChangeState('eau_j',$spa['eau_j']);
     ?><div class="slider round"></div></label></td>
     <td><label class="switch">
     <?php
@@ -90,18 +89,21 @@ var_dump($spa);
     print('<input name="air_j" type="checkbox" value="air_j" onchange="this.form.submit()" checked>');}
     else{
     print('<input name="air_j" type="checkbox" value="air_j" onchange="this.form.submit()">');}
+    ChangeState('air_j',$spa['air_j']);
     ?><div class="slider round"></div></label></td><td><label class="switch">
     <?php
     if($spa['fil_j']==true){
     print('<input name="fil_j" type="checkbox" value="fil_j" onchange="this.form.submit()" checked>');}
     else{
     print('<input name="fil_j" type="checkbox" value="fil_j" onchange="this.form.submit()">');}
+    ChangeState('fil_j',$spa['fil_j']);
     ?><div class="slider round"></div></label></td><td><label class="switch">
     <?php
     if($spa['cha_j']==true){
     print('<input name="cha_j" type="checkbox" value="cha_j" onchange="this.form.submit()" checked>');}
     else{
     print('<input name="cha_j" type="checkbox" value="cha_j" onchange="this.form.submit()">');}
+    ChangeState('cha_j',$spa['cha_j']);
     ?><div class="slider round"></div></label></td>
     <td><label class="switch">
     <?php
@@ -109,6 +111,7 @@ var_dump($spa);
     print('<input name="lum_j" type="checkbox" value="lum_j" onchange="this.form.submit()" checked>');}
     else{
     print('<input name="lum_j" type="checkbox" value="lum_j" onchange="this.form.submit()">');}
+    ChangeState('lum_j',$spa['lum_j']);
     ?><div class="slider round"></div></label></td>
     </tr>
     </table>
@@ -122,6 +125,7 @@ var_dump($spa);
     print('<input name="ncc_p" type="checkbox" value="ncc_p" onchange="this.form.submit()" checked>');}
     else{
     print('<input name="ncc_p" type="checkbox" value="ncc_p" onchange="this.form.submit()">');}
+    ChangeState('ncc_p',$spa['ncc_p']);
     ?><div class="slider round"></div></label></td>
     <td><label class="switch">
     <?php
@@ -129,18 +133,21 @@ var_dump($spa);
     print('<input name="fil_p" type="checkbox" value="fil_p" onchange="this.form.submit()" checked>');}
     else{
     print('<input name="fil_p" type="checkbox" value="fil_p" onchange="this.form.submit()">');}
+    ChangeState('fil_p',$spa['fil_p']);
     ?><div class="slider round"></div></label></td><td><label class="switch">
     <?php
     if($spa['cha_p']==true){
     print('<input name="cha_p" type="checkbox" value="cha_p" onchange="this.form.submit()" checked>');}
     else{
     print('<input name="cha_p" type="checkbox" value="cha_p" onchange="this.form.submit()">');}
+    ChangeState('cha_p',$spa['cha_p']);
     ?><div class="slider round"></div></label></td><td><label class="switch">
     <?php
     if($spa['lum_p']==true){
     print('<input name="lum_p" type="checkbox" value="lum_p" onchange="this.form.submit()" checked>');}
     else{
     print('<input name="lum_p" type="checkbox" value="lum_p" onchange="this.form.submit()">');}
+    ChangeState('lum_p',$spa['lum_p']);
     ?><div class="slider round"></div></label></td>
     </tr>
     </table>
@@ -153,7 +160,6 @@ var_dump($spa);
     <tr><td width="25%">25 °C</td width="25%"><td>35 °C</td><td colspan=2 width="50%">24 °C</td></tr>
     </table>
     </form>
-    <?php var_dump($toto);
-    ?>
+    <!--<?php var_dump($toto);?>!-->
 </body>
 </html>

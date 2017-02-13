@@ -37,6 +37,7 @@ function ChangeState($fonctions,$value)
 	{
 		foreach($row as $result)
 			{
+				exec("gpio mode ".$result." out");
 				if ($value == 1){
 					exec("gpio write ".$result." 1");
 				}
