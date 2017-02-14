@@ -1,0 +1,62 @@
+-- MySQL dump 10.13  Distrib 5.5.54, for debian-linux-gnu (armv7l)
+--
+-- Host: localhost    Database: spa_bdd
+-- ------------------------------------------------------
+-- Server version	5.5.54-0+deb8u1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `spa_bdd`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `spa_bdd` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `spa_bdd`;
+
+--
+-- Table structure for table `cablages`
+--
+
+DROP TABLE IF EXISTS `cablages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cablages` (
+  `id` int(2) NOT NULL AUTO_INCREMENT,
+  `pin` int(2) NOT NULL,
+  `gpio` int(2) DEFAULT NULL,
+  `cablage` varchar(255) DEFAULT NULL,
+  `fonction` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cablages`
+--
+
+LOCK TABLES `cablages` WRITE;
+/*!40000 ALTER TABLE `cablages` DISABLE KEYS */;
+INSERT INTO `cablages` VALUES (1,1,NULL,NULL,'3.3V'),(2,2,NULL,NULL,'5v'),(3,3,8,NULL,'SDA0'),(4,4,NULL,NULL,NULL),(5,5,9,NULL,'SCL0'),(6,6,NULL,NULL,'0v'),(7,0,7,NULL,'GPIO7'),(8,0,15,NULL,'GPIO8'),(9,0,NULL,NULL,'DNC'),(10,0,16,NULL,'RxD'),(11,11,0,'pompe3','fil_j'),(12,12,1,'electrolyse','fil_j'),(13,0,2,NULL,NULL),(14,0,NULL,NULL,'DNC'),(15,0,3,NULL,NULL),(16,0,4,NULL,'GPIO4'),(17,0,NULL,NULL,'DNC'),(18,0,5,NULL,'GPIO5'),(19,0,12,NULL,'MOSI'),(20,0,NULL,NULL,'DNC'),(21,0,13,NULL,'MSO'),(22,0,6,NULL,'GPIO6'),(23,0,14,NULL,'SCLK'),(24,0,10,NULL,'CE0'),(25,0,NULL,NULL,'DNC'),(26,0,11,NULL,'CE1'),(27,11,0,'pompe3','cha_j');
+/*!40000 ALTER TABLE `cablages` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-02-14 13:49:03
