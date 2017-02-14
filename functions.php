@@ -33,7 +33,7 @@ function ChangeState($fonctions,$value)
 {
 	$tab=array();
 	$dbh=pdo();
-	foreach($dbh->query('SELECT gpio from cablages where fonction = "'.$fonctions.'"') as $row)
+	foreach($dbh->query('SELECT gpio from cablages where fonction LIKE "%'.$fonctions.'%"') as $row)
 	{
 		foreach($row as $result)
 			{
@@ -57,7 +57,6 @@ function cha_j($value)
 {
 
 }
-
 function fil_j($value)
 {
 
