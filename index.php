@@ -67,7 +67,12 @@ else{
     <head>
         <!--<meta HTTP-EQUIV="Refresh" CONTENT="10">!-->
         <title>Spa</title>
-        <link rel="stylesheet" href="css/style2.css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<link rel="stylesheet" href="css/style2.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
 <body>
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" name="Jacuzzi">
@@ -117,7 +122,7 @@ else{
     </table>
     <table>
     <tr><th colspan=4>Piscine</th></tr>
-    <tr><td width="25%">Nage Contre Courant</td><td width="25%">Filtration</td><td width="25%">Chauffage</td><td width="25%">Lumières</td></tr>
+    <tr><td width="25%">NCC</td><td width="25%">Filtration</td><td width="25%">Chauffage</td><td width="25%">Lumières</td></tr>
     <tr>
     <td><label class="switch">
     <?php
@@ -158,6 +163,9 @@ else{
     <tr><td width="50%">Air</td><td colspan="2" width="50%">Eau</td></tr>
     <tr><td width="50%"></td><td width="25%">Jacuzzi</td><td width="25%">Piscine</td></tr>
     <tr><td width="25%">25 °C</td width="25%"><td>35 °C</td><td colspan=2 width="50%">24 °C</td></tr>
+    <div class="container">
+    <tr><td colspan="7"><button type="button" class="btn btn-info">Switch off</button></td></tr>
+    </div>
     </table>
     </form>
 </body>
