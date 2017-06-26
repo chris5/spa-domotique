@@ -160,6 +160,5 @@ else{
     <tr><td width="25%">25 °C</td width="25%"><td>35 °C</td><td colspan=2 width="50%">24 °C</td></tr>
     </table>
     </form>
-    <!--<?php var_dump($toto);?>!-->
 </body>
 </html>

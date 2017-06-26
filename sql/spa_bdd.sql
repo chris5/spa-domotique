@@ -19,9 +19,8 @@
 -- Current Database: `spa_bdd`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `spa_bdd` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `spa_bdd`;
+USE `spa`;
 
 --
 -- Table structure for table `cablages`
