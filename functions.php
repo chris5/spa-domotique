@@ -48,56 +48,6 @@ function ChangeState($fonctions,$value)
 	}	
 }
 
-function air_j($value)
-{
-
-}
-
-function cha_j($value)
-{
-
-}
-function fil_j($value)
-{
-
-}
-
-function lum_j($value)
-{
-
-}
-
-function ncc_p($value)
-{
-
-}
-
-function cha_p($value)
-{
-
-}
-
-function fil_p($value)
-{
-
-}
-
-function lum_p($value)
-{
-
-}
-function tmp_p($value)
-{
-
-}
-function tmp_j($value)
-{
-
-}
-function tmp_a($value)
-{
-
-}
 
 function getPinState($pin,$pins){
 	$commands = array();
