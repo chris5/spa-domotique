@@ -1,5 +1,7 @@
 #!/bin/python
 #coding: utf-8
+import logging
+
 import smbus
 import time
 import sys
@@ -11,6 +13,9 @@ address = 0x12
 
 #device = int(sys.argv[1])
 #value = int(sys.argv[2])
+
+#print device
+#print value
 
 def search_device(device):
 	return { 'jet_j' : '1', 'air_j' : '2', 'fil_j' : '3', 'cha_j' : '4', 'lum_j' : '5', 'cas_p' : '6', 'ncc_p' : '7', 'fil_p' : '8', 'cha_p' : '9', 'lum_p' : '10', 'off_p' : '11','eta_s' : '12'}.get(device) 

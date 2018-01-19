@@ -1,7 +1,6 @@
 <?php
 require('functions.php');
-$spa1=getState();
-//die($state);
+$state=getState();
 //ini_set("display_errors", true);
 ?>
 <html>
@@ -12,7 +11,7 @@ $spa1=getState();
   		<link rel="stylesheet" href="css/style2.css">
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
+        <meta http-equiv="Refresh" content="5;url=index.php">
     </head>
 
 <body>
@@ -20,7 +19,7 @@ $spa1=getState();
     <!--tableau jacuzzi-->
     <table>
     <tr><th colspan=6>Jacuzzi</th></tr>
-    <tr><td width="15%">Jets</td><td width="15%">Air</td><td width="15%">Filtration</td><td width="15%">Chauffage</td><td width="15%">Lumières</td><td width="15%">TOTO2</td></tr>
+    <tr><td width="20%">Jets</td><td width="20%">Air</td><td width="20%">Filtration</td><td width="20%">Chauffage</td><td width="20%">Lumières</td></tr>
     <tr>
   
   <!-- To duplicate --> 
@@ -75,17 +74,6 @@ $spa1=getState();
 ?>
    <div class="slider round"></div></label></td>
 
-<td><label class="switch">
-<?php
-    if(isset($spa))
-        $checked = ($spa['jet_j'] ? 'checked':'');
-    else
-        $checked='';
-    print('<input class="checkboxcaller" name="jet_j" type="checkbox" id="jet_j" '.$checked.' />');
-?>
-   <div class="slider round"></div></label></td>   
-   
-   
     </tr>
     </table>
     
@@ -174,7 +162,7 @@ $(".checkboxcaller").change(function()
         var element = $(this).attr("name");
         $.post( "services/api.php", { "element":element, "checked": $(this).prop("checked") })
           .done(function( data ) {
-           //alert( "Data Loaded: " + data );
+          //  alert( "Data Loaded: " + data );
           });
     });
 

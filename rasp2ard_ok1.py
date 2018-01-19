@@ -1,5 +1,6 @@
 #!/bin/python
 #coding: utf-8
+
 import smbus
 import time
 import sys
@@ -13,7 +14,7 @@ address = 0x12
 #value = int(sys.argv[2])
 
 def search_device(device):
-	return { 'jet_j' : '1', 'air_j' : '2', 'fil_j' : '3', 'cha_j' : '4', 'lum_j' : '5', 'cas_p' : '6', 'ncc_p' : '7', 'fil_p' : '8', 'cha_p' : '9', 'lum_p' : '10', 'off_p' : '11','eta_s' : '12'}.get(device) 
+	return { 'jet_j' : '0', 'air_j' : '1', 'fil_j' : '2', 'cha_j' : '3', 'lum_j' : '4', 'cas_p' : '5', 'ncc_p' : '6', 'fil_p' : '7', 'cha_p' : '8', 'lum_p' : '9', 'off_p' : '10','eta_p' : '11'}.get(device) 
 
 def search_value(value):
 	return { 'true' : '1', 'false' : '0' }.get(value) 

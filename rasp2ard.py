@@ -1,5 +1,8 @@
 #!/bin/python
 #coding: utf-8
+#fichier = open("out", "w"
+#fichier.write("pwet")
+#fichier.close()
 import smbus
 import time
 import sys

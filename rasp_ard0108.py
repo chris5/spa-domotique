@@ -1,5 +1,6 @@
 #!/bin/python
 #coding: utf-8
+
 import smbus
 import time
 import sys

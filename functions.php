@@ -11,7 +11,8 @@ function pdo()
 
 function getState()
 {
-
+	$spa = shell_exec('python getState.py');
+	return($spa);
 }
 
 ?>

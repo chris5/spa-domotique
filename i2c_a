@@ -1,0 +1,29 @@
+import smbus
+import time
+
+# Remplacer 0 par 1 si nouveau Raspberry
+bus = smbus.SMBus(1)
+address = 0x12
+  # demande chauffage spa
+    cha_j = input("demande chauff spa 1/0: ")
+    print(cha_j)
+    print "demande de chauff spa ", cha_j
+  
+  # demande filtration spa
+    fil_j = input("demande filt spa 1/0: ")
+    print(fil_j)
+    print "demande de filt spa ", fil_j
+
+  # demande chauffage spa
+	cha_p = input("demande chauff pool 1/0: ")
+    print(cha_p)
+    print "demande de chauff pool ", cha_p
+
+	var = [ cha_j, cha_p, fil_j]
+    print "var egale ", var
+#while True:
+     
+    bus.write_i2c_block_data(address,0x00,[cha_jr, cha_pr, fil_jr])
+   # print("send")
+     
+    time.sleep(5)
